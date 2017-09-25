@@ -1,0 +1,37 @@
+{
+  "name": "node-user-accounts-boilerplate",
+  "version": "0.2.3",
+  "description": "Off the shelf user accounts management",
+  "main": "setup.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jbn test",
+    "lint": "jbn lint",
+    "init": "jbn init",
+    "docs": "jbn docs",
+    "form": "jbn form"
+  },
+  "author": "Nahid Akbar",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express-session": "^1.15.3",
+    "passport": "^0.3.2",
+    "request-ip": "^2.0.2"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.112.0",
+    "block-failed": "0.0.1",
+    "express": "^4.15.4",
+    "jbn": "latest",
+    "node-collections-boilerplate": "^0.1.8",
+    "node-recaptcha2": "^2.1.2",
+    "passport-local": "^1.0.0",
+    "scrypt": "^6.0.3",
+    "sendmail": "^1.2.0"
+  }
+}
