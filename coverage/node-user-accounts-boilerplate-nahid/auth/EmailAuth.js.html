@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-user-accounts-boilerplate-nahid/auth/EmailAuth.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">node-user-accounts-boilerplate-nahid/auth</a> EmailAuth.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>94/99</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.61% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>57/69</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.95% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>94/99</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+const audit = require('../helper/audit');
+const failureImpl = require('../restriction/failure');
+const generatePassword = require('../fields/strongPassword').generate;
+const json = require('body-parser')
+  .json();
+const recaptchaImpl = require('../restriction/recaptcha');
+&nbsp;
+const Auth = require('./Auth');
+const LocalStrategy = require('passport-local');
+&nbsp;
+/**
+ * Email based login.
+ *
+ * Requies ```passport-local``` package.
+ */
+class EmailAuth extends Auth
+{
+&nbsp;
+  /**
+   * @param {object} options see Auth class + additional options for email configuration.
+   * @property {number} [options.tokenExpxiryMinutes=10] number of minutes to restrict token exchange to for passwordless login
+   */
+  constructor(options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span>
+  {
+    super('email', options);
+&nbsp;
+    /**
+     * Instance of email sender class for sending emails.
+     *
+     * If this is not specified, email login is disabled.
+     *
+     * @type {EmailSender}
+     */
+    this.emailSender = options.emailSender;
+&nbsp;
+    /**
+     * Instance of crypt class for encrypting and verifying passwords.
+     *
+     * @type {Crypt}
+     */
+    this.crypt = options.crypt;
+&nbsp;
+    /**
+     * Name of application.
+     * Used for sending email.
+     * @type {string}
+     */
+    this.applicationName = options.applicationName || 'Account';
+&nbsp;
+    /**
+     * Email from address
+     * Used for sending email.
+     * @type {string}
+     */
+    this.fromAddress = options.fromAddress || 'no-thanks@reply-factory.com';
+&nbsp;
+    this.description.usesPassword = true;
+    this.description.tokenExpiryMinutes = options.tokenExpiryMinutes || 10;
+&nbsp;
+    /**
+     * @private
+     */
+    this.tokenExpiryMilliseconds = this.description.tokenExpiryMinutes * 60 * 1000;
+&nbsp;
+    /**
+     * Settings for rate limiting failed requests.
+     *
+     * Note: use this or recaptcha.
+     */
+    this.block = options.block || undefined;
+&nbsp;
+    /**
+     * Settings for rate limiting through recaptcha.
+     *
+     * Note: use this or recaptcha.
+     */
+    this.recaptcha = options.recaptcha || undefined;
+&nbsp;
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.recaptcha)
+    {
+<span class="cstat-no" title="statement not covered" >      if (this.recaptcha.publicKey)</span>
+      {
+<span class="cstat-no" title="statement not covered" >        this.description.recaptcha = this.recaptcha.publicKey;</span>
+      }
+      else
+      {
+<span class="cstat-no" title="statement not covered" >        this.recaptcha = undefined;</span>
+      }
+    }
+&nbsp;
+    /**
+     * If true, it remembers any passwords specified registration.
+     */
+    this.allowPasswordSettingDuringRegistration = options.allowPasswordSettingDuringRegistration || false;
+&nbsp;
+&nbsp;
+    /**
+     * login security tokens
+     * @protected
+     */
+    this.tokens = {};
+  }
+&nbsp;
+  /**
+   * logs users in based on token or based on username(email)/password
+   */
+  async strategyImpl(req, username, password, done)
+  {
+    const tokens = this.tokens;
+&nbsp;
+    // call if unsuccessful
+    function error(msg, detailed = <span class="branch-0 cbranch-no" title="branch not covered" >undefined)</span>
+    {
+      req.audit(audit.LOGIN_FAILURE, msg, detailed);
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof msg === 'string')
+      {
+        msg = {
+          error: msg
+        };
+      }
+      done(null, msg);
+    }
+&nbsp;
+    // expire aged tokens
+    const now = Date.now();
+&nbsp;
+    for (let tok in tokens)
+    {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (now &gt;= tokens[tok].expires)
+      {
+<span class="cstat-no" title="statement not covered" >        delete tokens[tok];</span>
+      }
+    }
+&nbsp;
+    // passwordless login
+    if (tokens[username])
+    {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (tokens[username].password === password)
+      {
+        const profile = await this.createProfileFromCredential(username, tokens[username].extra);
+&nbsp;
+        delete tokens[username];
+&nbsp;
+        this.handleUserLoginByProfile(username, profile, done, req);
+      }
+      // else
+      // {
+      //   error('Temporary Login password did not match.', username);
+      // }
+    }
+    // else // username / password login
+    // {
+    const user = this.findUser(username);
+&nbsp;
+    if (user &amp;&amp; user.credentials) // if found, log in found account
+    {
+      for (let credential of user.credentials)
+      {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (credential.type === this.method &amp;&amp; credential.value === username &amp;&amp; user.password)
+        {
+          this.crypt.verify(password, user.password)
+            .then((verified) =&gt;
+            {
+              if (verified)
+              {
+                done(null, user);
+              }
+              else
+              {
+                error('Email and password combination not found.', username);
+              }
+            }, done);
+&nbsp;
+          return;
+        }
+      }
+    }
+    error('Email and password combination not found.', username);
+    // }
+  }
+&nbsp;
+  /**
+   * sends temporary login password to email address
+   */
+  async passwordlessImpl(req, res)
+  {
+    const tokens = this.tokens;
+    try
+    {
+      const username = req.body.username;
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!req.body.username || typeof req.body.username !== 'string')
+      {
+<span class="cstat-no" title="statement not covered" >        return res.error('Username not specified', audit.LOGIN_FAILURE);</span>
+      }
+      const temporaryPassword = generatePassword();
+      const theme = req.params.theme || <span class="branch-1 cbranch-no" title="branch not covered" >'login';</span>
+&nbsp;
+      await this.sendTemporaryPassword(theme, username, temporaryPassword, this.description.tokenExpiryMinutes, req.body.loginLinkPrefix);
+      tokens[username] = {
+        password: temporaryPassword,
+        expires: Date.now() + this.tokenExpiryMilliseconds,
+        extra: req.body,
+      };
+      res.success('A login email has been sent to email address.', audit.LOGIN, username);
+    }
+    catch (e)
+    {
+      console.log(e);
+      res.error('Error sending email. Please verify that your address is correct and is valid.', audit.LOGIN_FAILURE.e);
+    }
+  }
+&nbsp;
+  /**
+   * @override
+   */
+  install(app, prefix, passport)
+  {
+    // Protect methods with restriction.
+    // Verify does not need it as we are doing simple memory lookup in  small
+    // sized table. May still be an issue unless we receive enough registrations
+    // to fill up memory.
+    const limit = this.block ? <span class="branch-0 cbranch-no" title="branch not covered" >failureImpl(this.block) </span>: recaptchaImpl(this.recaptcha);
+&nbsp;
+    passport.use(new LocalStrategy({
+      passReqToCallback: true,
+    }, this.strategyImpl.bind(this)));
+&nbsp;
+    app.all([`${prefix}/login.json`,
+        `${prefix}/verify.json`
+      ],
+      json,
+      limit,
+      passport.authenticate('local', this.authenticateOptions),
+      this.loggedIn());
+&nbsp;
+    // PASSWORDLESS LOGIN
+&nbsp;
+    if (this.emailSender)
+    {
+      app.all(`${prefix}/:theme.json`, json, limit, this.passwordlessImpl.bind(this));
+    }
+  }
+&nbsp;
+  /**
+   * helper method that creates a profile object from a credential address
+   */
+  async createProfileFromCredential(id, extra = {})
+  {
+    const profile = await super.createProfileFromCredential(id, extra);
+&nbsp;
+    if (extra.password &amp;&amp; this.crypt)
+    {
+      profile.password = await this.crypt.hash(extra.password);
+    }
+&nbsp;
+    return profile;
+  }
+&nbsp;
+  /**
+   * Override of helper method that inserts password into produced user
+   * if allowed by setting.
+   *
+   * @override
+   */
+  createUserFromProfile(profile)
+  {
+    // we allow password setting
+    let user = super.createUserFromProfile(profile);
+&nbsp;
+    if (profile.password &amp;&amp; this.allowPasswordSettingDuringRegistration)
+    {
+      user.password = profile.password;
+    }
+&nbsp;
+    return user;
+  }
+&nbsp;
+  /**
+   * Helper method that sends temporary password to an email address for rego/login.
+   *
+   * Should be able to override this to specify custom formats for email.
+   *
+   * @param {string} theme register | recover | passwordless etc. anything other than login or verify
+   * @param {string} to target email address
+   * @param {string} password temporary login token
+   * @param {number} expireMinutes number of minutes after which this login token will expire
+   * @param {string} [loginLinkPrefix] forward url for any links in email
+   */
+  sendTemporaryPassword(theme, to, password, expireMinutes, loginLinkPrefix)
+  {
+    let subject = `${this.applicationName}`;
+&nbsp;
+    switch (theme)
+    {
+    case 'register':
+      subject += ' Registration';
+      break;
+    case 'recover':
+      subject += ' Account Recovery';
+      break;
+    default:
+      subject += ' Login';
+      break;
+    }
+&nbsp;
+    let message = '';
+&nbsp;
+    message += `&lt;p&gt;You have received this email because someone requested access to the ${this.applicationName} using this email address.&lt;/p&gt;\n`;
+&nbsp;
+    if (theme === 'register' &amp;&amp; loginLinkPrefix)
+    {
+      message += `&lt;p&gt;Use the following link to verify this email address and complete your registration: &lt;a href="${loginLinkPrefix}${password}"&gt;verify&lt;/a&gt;.&lt;/p&gt;\n`;
+    }
+    else if (theme === 'recover' &amp;&amp; loginLinkPrefix)
+    {
+      message += `&lt;p&gt;Use the following link to log into the system to change your password: &lt;a href="${loginLinkPrefix}${password}"&gt;login&lt;/a&gt;.&lt;/p&gt;\n`;
+    }
+    else
+    if (loginLinkPrefix)
+    {
+      message += `&lt;p&gt;Use the following link to log into the system: &lt;a href="${loginLinkPrefix}${password}"&gt;login&lt;/a&gt;.&lt;/p&gt;\n`;
+      message += `&lt;p&gt;Alternatively, you can use the following password: ${password}&lt;/p&gt;\n`;
+      message += `&lt;p&gt;Note: this link and password will expire within ${expireMinutes} minutes of request time.&lt;/p&gt;\n`;
+    }
+    else
+    {
+      message += `&lt;p&gt;Use the following password to log into the system: ${password}&lt;/p&gt;\n`;
+      message += `&lt;p&gt;Note: this password will expire within ${expireMinutes} minutes of request time.&lt;/p&gt;\n`;
+    }
+    message += `&lt;p&gt;If this is not you, please contact system administrators.&lt;/p&gt;\n`;
+    message += `&lt;p&gt;Kind Regards,&lt;/p&gt;\n`;
+    message += `&lt;p&gt;${this.applicationName} Team&lt;/p&gt;\n`;
+    message += `&lt;p&gt;&lt;/p&gt;\n`;
+    message += `&lt;p&gt;WARNING: This is an automaticly generated email. Do not reploy to it.&lt;/p&gt;\n`;
+&nbsp;
+    return this.emailSender.send(to, this.fromAddress, subject, message);
+  }
+}
+&nbsp;
+module.exports = EmailAuth;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Sep 25 2017 07:36:02 GMT+0000 (UTC)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

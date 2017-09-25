@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">node-user-accounts-boilerplate-nahid/auth/Auth.js | node-user-accounts-boilerplate</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Off the shelf user accounts management"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="node-user-accounts-boilerplate"><meta property="twitter:description" content="Off the shelf user accounts management"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setup">setup</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#auth">auth</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/Auth.js~Auth.html">Auth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/EmailAuth.js~EmailAuth.html">EmailAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/FacebookAuth.js~FacebookAuth.html">FacebookAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/GithubAuth.js~GithubAuth.html">GithubAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/GoogleAuth.js~GoogleAuth.html">GoogleAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/LinkedinAuth.js~LinkedinAuth.html">LinkedinAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/NoAuth.js~NoAuth.html">NoAuth</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#crypt">crypt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/Crypt.js~Crypt.html">Crypt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/PBKDF2.js~PBKDF2.html">PBKDF2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/SCRYPT.js~SCRYPT.html">SCRYPT</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#email">email</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/EmailFilter.js~EmailFilter.html">EmailFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/EmailSender.js~EmailSender.html">EmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/NoEmailSender.js~NodeEmailSender.html">NodeEmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/NodeEmailSender.js~NodeEmailSender.html">NodeEmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/SESEmailSender.js~SESEmailSender.html">SESEmailSender</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#fields">fields</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-checkStrongPassword">checkStrongPassword</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate">generate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-enabled">enabled</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-mask">mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-self">self</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#filters">filters</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parse">parse</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helper">helper</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LOGGEDIN">LOGGEDIN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-audit">audit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bootstrap">bootstrap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-callback">callback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-defer">defer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateId">generateId</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reject">reject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-resolve">resolve</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-success">success</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#restriction">restriction</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-failure">failure</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-recaptcha">recaptcha</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#session">session</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/session/CollectionSessionStore.js~CollectionSessionStore.html">CollectionSessionStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/session/MemorySessionStore.js~MemorySessionStore.html">MemorySessionStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Store">Store</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">node-user-accounts-boilerplate-nahid/auth/Auth.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
+
+const audit = require(&apos;../helper/audit&apos;);
+const generateId = require(&apos;../helper/generateId&apos;);
+
+/**
+ * Authenticator/passport strategy wrapper abstraction.
+ *
+ * I.e. it is the parent class of all auth classes.
+ */
+class Auth
+{
+
+  /**
+   * @param {string} method
+   * @param {object} options common options for all auth classes; see properties
+   */
+  constructor(method, options)
+  {
+
+    /**
+     * Authentication method name. E.g. &apos;email&apos; for Email based authentication.
+     * This is used as an unique id for various things.
+     * @type string
+     */
+    this.method = method;
+
+    /**
+     * This is a standard descriptor of this authentication mechanism that is publicly shared.
+     * Clients should use this to figure out how to use a login auth from outside.
+     *
+     * Not directly configurable.
+     *
+     * @type object
+     */
+    this.description = {
+      method: this.method
+    };
+
+    /**
+     * Additional settings given to passport.authenticate.
+     *
+     * Not directly configurable.
+     *
+     * @type object
+     */
+    this.authenticateOptions = {
+      failureMessage: &apos;login failed&apos;,
+      badRequestMessage: &apos;XXX&apos;
+    };
+
+    /**
+     * Users collection.
+     *
+     * Note: various things all assume that a CachedCollection is being used.
+     *
+     * @type {CachedCollection}
+     */
+    this.users = options.users || options.collection;
+
+    /**
+     * Default roles new registered users should assume.
+     *
+     * @type {object}
+     */
+    this.defaultRoles = options.defaultRoles || {};
+
+    /**
+     * Custom fields
+     *
+     * @type {object}
+     */
+    this.custom = options.custom || {};
+
+    //~ /**
+    //~ * Instance of email sender class for sending emails.
+    //~ *
+    //~ * @type {EmailSender}
+    //~ */
+    //~ this.emailSender = options.emailSender;
+
+
+    //~ this.defaultNotificationInterval = options.defaultNotificationInterval || -1;
+
+    //~ if (options.recaptcha)
+    //~ {
+    //~ this.description.recaptcha = true;
+    //~ }
+  }
+
+  /**
+   * Must be overridden to provide implementation of said authentication method.
+   * @param {ExpressApplication} app express application
+   * @param {string} prefix all route prefix
+   * @param {Passport} passport passport class
+   * @abstract
+   */
+  install(app, prefix, passport)
+  {
+    throw new Error(&apos;TODO: ABSTRACT&apos;);
+  }
+
+  /**
+   * Helper method that finds an user based on a credential.
+   *
+   * A credential is something like an email address or a facebook user id.
+   *
+   * This is something that uniquely identifies an account.
+   *
+   * @param {string} value
+   * @return {User|false}
+   */
+  findUser(value)
+  {
+    const users = this.users.lookup;
+
+    for (let userId in users)
+    {
+      let user = users[userId];
+      let credentials = (user.credentials || [])
+        .filter((credential) =&gt; credential.type === this.method &amp;&amp; credential.value === value);
+
+      if (credentials.length &gt; 0)
+      {
+        return user;
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Helper method for SSO type logins.
+   *
+   * This method finds existing or creates new accounts basen on profile
+   * information returned from oauth partner.
+   *
+   * @param {string} username unique id
+   * @param {Profile} profile unique id
+   * @param {Function} done callback to call when our work is done
+   * @param {Request} [req] request object
+   */
+  handleUserLoginByProfile(username, profile, done, req = undefined)
+  {
+    username = username || profile.id;
+    // find an account
+    let user = this.findUser(username);
+
+    if (user) // if found, log in found account
+    {
+      done(null, user);
+    }
+    else // if not found, make a new user and log new user in
+    {
+      user = this.createUserFromProfile(profile);
+      this.users.createRecord(user)
+        .then((user) =&gt;
+        {
+          req &amp;&amp; req.audit(audit.ACCOUNT_CREATE, JSON.stringify({
+            user,
+            profile
+          }));
+          done(null, user);
+        }, done);
+    }
+  }
+
+  /**
+   * Helper method that creates an User object from a Profile
+   *
+   * @param {Profile} profile
+   * @return {User}
+   */
+  createUserFromProfile(profile)
+  {
+    let user = {
+      // unique id
+      // can&apos;t use id from profile as these might conflict across login providers
+      id: generateId(),
+      // login credentials
+      credentials: [{
+        type: this.method,
+        value: profile.id
+      }],
+      // new user roles
+      roles: this.defaultRoles,
+      // profile bs
+      displayName: profile.displayName,
+      //~ name: profile.name,
+      photos: profile.photos,
+      //~ // notification settings
+      //~ notifications: [],
+      //~ notificationInterval: -1,
+      //~ notificationLastSent: 0,
+      //~ notificationSubscriptions: {},
+    };
+
+    for (let field in this.custom)
+    {
+      if (this.custom[field].derive)
+      {
+        let value = this.custom[field].derive(profile);
+
+        if (value)
+        {
+          user[field] = value;
+        }
+      }
+    }
+
+    return user;
+  }
+
+  /**
+   * helper method that creates a profile object from a credential address
+   */
+  async createProfileFromCredential(id, extra = {})
+  {
+    if (!id)
+    {
+      throw new Error(`id not specified: ${id}`);
+    }
+    // we don&apos;t accept spaces in id
+    id = id.replace(/\s+/g, &apos;&apos;);
+    if (!id)
+    {
+      throw new Error(`id not specified: ${id}`);
+    }
+    let displayName = extra.displayName || (id.indexOf(&apos;@&apos;) !== -1 &amp;&amp; id.substr(0, id.indexOf(&apos;@&apos;))) || id;
+    let user = {
+      id,
+      displayName
+    };
+    return user;
+  }
+
+  /**
+   * Helper method that produces a middleware to handle successful logged in
+   * case.
+   *
+   * @param {boolean} [redirect=false] redirect based login is used
+   * @return {ExpressMiddleware}
+   */
+  loggedIn(redirect = false)
+  {
+    if (redirect &amp;&amp; typeof redirect !== &apos;string&apos;)
+    {
+      redirect = &apos;/&apos;;
+    }
+
+    return function (req, res)
+    {
+      // if not req.user.id then it is not a real use
+      // i.e. we are forwarding error or custom payload
+      if (!req.user.id)
+      {
+        res.error(req.user.error, audit.LOGIN_FAILURE);
+        req.logout();
+      }
+      else
+      {
+        // otherwise, we make a fuss about logging in
+        res.audit(audit.LOGIN, `Logged in via ${this.method}`, JSON.stringify({
+          id: req.user.id,
+          displayName: req.user.displayName,
+          roles: req.user.roles
+        }));
+
+        // for redirect based login methods, we redirect back to some url
+        if (redirect)
+        {
+          res.redirect(redirect);
+        }
+        else
+        {
+          // otherwise we return a login success message
+          res.success(`Logged in via ${this.method}`, audit.LOGIN);
+        }
+      }
+    }.bind(this);
+  }
+
+}
+
+module.exports = Auth;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

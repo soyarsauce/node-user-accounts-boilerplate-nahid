@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">node-user-accounts-boilerplate-nahid/auth/EmailAuth.js | node-user-accounts-boilerplate</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Off the shelf user accounts management"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="node-user-accounts-boilerplate"><meta property="twitter:description" content="Off the shelf user accounts management"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setup">setup</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#auth">auth</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/Auth.js~Auth.html">Auth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/EmailAuth.js~EmailAuth.html">EmailAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/FacebookAuth.js~FacebookAuth.html">FacebookAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/GithubAuth.js~GithubAuth.html">GithubAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/GoogleAuth.js~GoogleAuth.html">GoogleAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/LinkedinAuth.js~LinkedinAuth.html">LinkedinAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/NoAuth.js~NoAuth.html">NoAuth</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#crypt">crypt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/Crypt.js~Crypt.html">Crypt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/PBKDF2.js~PBKDF2.html">PBKDF2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/SCRYPT.js~SCRYPT.html">SCRYPT</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#email">email</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/EmailFilter.js~EmailFilter.html">EmailFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/EmailSender.js~EmailSender.html">EmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/NoEmailSender.js~NodeEmailSender.html">NodeEmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/NodeEmailSender.js~NodeEmailSender.html">NodeEmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/SESEmailSender.js~SESEmailSender.html">SESEmailSender</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#fields">fields</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-checkStrongPassword">checkStrongPassword</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate">generate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-enabled">enabled</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-mask">mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-self">self</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#filters">filters</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parse">parse</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helper">helper</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LOGGEDIN">LOGGEDIN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-audit">audit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bootstrap">bootstrap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-callback">callback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-defer">defer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateId">generateId</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reject">reject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-resolve">resolve</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-success">success</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#restriction">restriction</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-failure">failure</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-recaptcha">recaptcha</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#session">session</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/session/CollectionSessionStore.js~CollectionSessionStore.html">CollectionSessionStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/session/MemorySessionStore.js~MemorySessionStore.html">MemorySessionStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Store">Store</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">node-user-accounts-boilerplate-nahid/auth/EmailAuth.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
+
+const audit = require(&apos;../helper/audit&apos;);
+const failureImpl = require(&apos;../restriction/failure&apos;);
+const generatePassword = require(&apos;../fields/strongPassword&apos;).generate;
+const json = require(&apos;body-parser&apos;)
+  .json();
+const recaptchaImpl = require(&apos;../restriction/recaptcha&apos;);
+
+const Auth = require(&apos;./Auth&apos;);
+const LocalStrategy = require(&apos;passport-local&apos;);
+
+/**
+ * Email based login.
+ *
+ * Requies ```passport-local``` package.
+ */
+class EmailAuth extends Auth
+{
+
+  /**
+   * @param {object} options see Auth class + additional options for email configuration.
+   * @property {number} [options.tokenExpxiryMinutes=10] number of minutes to restrict token exchange to for passwordless login
+   */
+  constructor(options = {})
+  {
+    super(&apos;email&apos;, options);
+
+    /**
+     * Instance of email sender class for sending emails.
+     *
+     * If this is not specified, email login is disabled.
+     *
+     * @type {EmailSender}
+     */
+    this.emailSender = options.emailSender;
+
+    /**
+     * Instance of crypt class for encrypting and verifying passwords.
+     *
+     * @type {Crypt}
+     */
+    this.crypt = options.crypt;
+
+    /**
+     * Name of application.
+     * Used for sending email.
+     * @type {string}
+     */
+    this.applicationName = options.applicationName || &apos;Account&apos;;
+
+    /**
+     * Email from address
+     * Used for sending email.
+     * @type {string}
+     */
+    this.fromAddress = options.fromAddress || &apos;no-thanks@reply-factory.com&apos;;
+
+    this.description.usesPassword = true;
+    this.description.tokenExpiryMinutes = options.tokenExpiryMinutes || 10;
+
+    /**
+     * @private
+     */
+    this.tokenExpiryMilliseconds = this.description.tokenExpiryMinutes * 60 * 1000;
+
+    /**
+     * Settings for rate limiting failed requests.
+     *
+     * Note: use this or recaptcha.
+     */
+    this.block = options.block || undefined;
+
+    /**
+     * Settings for rate limiting through recaptcha.
+     *
+     * Note: use this or recaptcha.
+     */
+    this.recaptcha = options.recaptcha || undefined;
+
+
+    if (this.recaptcha)
+    {
+      if (this.recaptcha.publicKey)
+      {
+        this.description.recaptcha = this.recaptcha.publicKey;
+      }
+      else
+      {
+        this.recaptcha = undefined;
+      }
+    }
+
+    /**
+     * If true, it remembers any passwords specified registration.
+     */
+    this.allowPasswordSettingDuringRegistration = options.allowPasswordSettingDuringRegistration || false;
+
+
+    /**
+     * login security tokens
+     * @protected
+     */
+    this.tokens = {};
+  }
+
+  /**
+   * logs users in based on token or based on username(email)/password
+   */
+  async strategyImpl(req, username, password, done)
+  {
+    const tokens = this.tokens;
+
+    // call if unsuccessful
+    function error(msg, detailed = undefined)
+    {
+      req.audit(audit.LOGIN_FAILURE, msg, detailed);
+      if (typeof msg === &apos;string&apos;)
+      {
+        msg = {
+          error: msg
+        };
+      }
+      done(null, msg);
+    }
+
+    // expire aged tokens
+    const now = Date.now();
+
+    for (let tok in tokens)
+    {
+      if (now &gt;= tokens[tok].expires)
+      {
+        delete tokens[tok];
+      }
+    }
+
+    // passwordless login
+    if (tokens[username])
+    {
+      if (tokens[username].password === password)
+      {
+        const profile = await this.createProfileFromCredential(username, tokens[username].extra);
+
+        delete tokens[username];
+
+        this.handleUserLoginByProfile(username, profile, done, req);
+      }
+      // else
+      // {
+      //   error(&apos;Temporary Login password did not match.&apos;, username);
+      // }
+    }
+    // else // username / password login
+    // {
+    const user = this.findUser(username);
+
+    if (user &amp;&amp; user.credentials) // if found, log in found account
+    {
+      for (let credential of user.credentials)
+      {
+        if (credential.type === this.method &amp;&amp; credential.value === username &amp;&amp; user.password)
+        {
+          this.crypt.verify(password, user.password)
+            .then((verified) =&gt;
+            {
+              if (verified)
+              {
+                done(null, user);
+              }
+              else
+              {
+                error(&apos;Email and password combination not found.&apos;, username);
+              }
+            }, done);
+
+          return;
+        }
+      }
+    }
+    error(&apos;Email and password combination not found.&apos;, username);
+    // }
+  }
+
+  /**
+   * sends temporary login password to email address
+   */
+  async passwordlessImpl(req, res)
+  {
+    const tokens = this.tokens;
+    try
+    {
+      const username = req.body.username;
+
+      if (!req.body.username || typeof req.body.username !== &apos;string&apos;)
+      {
+        return res.error(&apos;Username not specified&apos;, audit.LOGIN_FAILURE);
+      }
+      const temporaryPassword = generatePassword();
+      const theme = req.params.theme || &apos;login&apos;;
+
+      await this.sendTemporaryPassword(theme, username, temporaryPassword, this.description.tokenExpiryMinutes, req.body.loginLinkPrefix);
+      tokens[username] = {
+        password: temporaryPassword,
+        expires: Date.now() + this.tokenExpiryMilliseconds,
+        extra: req.body,
+      };
+      res.success(&apos;A login email has been sent to email address.&apos;, audit.LOGIN, username);
+    }
+    catch (e)
+    {
+      console.log(e);
+      res.error(&apos;Error sending email. Please verify that your address is correct and is valid.&apos;, audit.LOGIN_FAILURE.e);
+    }
+  }
+
+  /**
+   * @override
+   */
+  install(app, prefix, passport)
+  {
+    // Protect methods with restriction.
+    // Verify does not need it as we are doing simple memory lookup in  small
+    // sized table. May still be an issue unless we receive enough registrations
+    // to fill up memory.
+    const limit = this.block ? failureImpl(this.block) : recaptchaImpl(this.recaptcha);
+
+    passport.use(new LocalStrategy({
+      passReqToCallback: true,
+    }, this.strategyImpl.bind(this)));
+
+    app.all([`${prefix}/login.json`,
+        `${prefix}/verify.json`
+      ],
+      json,
+      limit,
+      passport.authenticate(&apos;local&apos;, this.authenticateOptions),
+      this.loggedIn());
+
+    // PASSWORDLESS LOGIN
+
+    if (this.emailSender)
+    {
+      app.all(`${prefix}/:theme.json`, json, limit, this.passwordlessImpl.bind(this));
+    }
+  }
+
+  /**
+   * helper method that creates a profile object from a credential address
+   */
+  async createProfileFromCredential(id, extra = {})
+  {
+    const profile = await super.createProfileFromCredential(id, extra);
+
+    if (extra.password &amp;&amp; this.crypt)
+    {
+      profile.password = await this.crypt.hash(extra.password);
+    }
+
+    return profile;
+  }
+
+  /**
+   * Override of helper method that inserts password into produced user
+   * if allowed by setting.
+   *
+   * @override
+   */
+  createUserFromProfile(profile)
+  {
+    // we allow password setting
+    let user = super.createUserFromProfile(profile);
+
+    if (profile.password &amp;&amp; this.allowPasswordSettingDuringRegistration)
+    {
+      user.password = profile.password;
+    }
+
+    return user;
+  }
+
+  /**
+   * Helper method that sends temporary password to an email address for rego/login.
+   *
+   * Should be able to override this to specify custom formats for email.
+   *
+   * @param {string} theme register | recover | passwordless etc. anything other than login or verify
+   * @param {string} to target email address
+   * @param {string} password temporary login token
+   * @param {number} expireMinutes number of minutes after which this login token will expire
+   * @param {string} [loginLinkPrefix] forward url for any links in email
+   */
+  sendTemporaryPassword(theme, to, password, expireMinutes, loginLinkPrefix)
+  {
+    let subject = `${this.applicationName}`;
+
+    switch (theme)
+    {
+    case &apos;register&apos;:
+      subject += &apos; Registration&apos;;
+      break;
+    case &apos;recover&apos;:
+      subject += &apos; Account Recovery&apos;;
+      break;
+    default:
+      subject += &apos; Login&apos;;
+      break;
+    }
+
+    let message = &apos;&apos;;
+
+    message += `&lt;p&gt;You have received this email because someone requested access to the ${this.applicationName} using this email address.&lt;/p&gt;\n`;
+
+    if (theme === &apos;register&apos; &amp;&amp; loginLinkPrefix)
+    {
+      message += `&lt;p&gt;Use the following link to verify this email address and complete your registration: &lt;a href=&quot;${loginLinkPrefix}${password}&quot;&gt;verify&lt;/a&gt;.&lt;/p&gt;\n`;
+    }
+    else if (theme === &apos;recover&apos; &amp;&amp; loginLinkPrefix)
+    {
+      message += `&lt;p&gt;Use the following link to log into the system to change your password: &lt;a href=&quot;${loginLinkPrefix}${password}&quot;&gt;login&lt;/a&gt;.&lt;/p&gt;\n`;
+    }
+    else
+    if (loginLinkPrefix)
+    {
+      message += `&lt;p&gt;Use the following link to log into the system: &lt;a href=&quot;${loginLinkPrefix}${password}&quot;&gt;login&lt;/a&gt;.&lt;/p&gt;\n`;
+      message += `&lt;p&gt;Alternatively, you can use the following password: ${password}&lt;/p&gt;\n`;
+      message += `&lt;p&gt;Note: this link and password will expire within ${expireMinutes} minutes of request time.&lt;/p&gt;\n`;
+    }
+    else
+    {
+      message += `&lt;p&gt;Use the following password to log into the system: ${password}&lt;/p&gt;\n`;
+      message += `&lt;p&gt;Note: this password will expire within ${expireMinutes} minutes of request time.&lt;/p&gt;\n`;
+    }
+    message += `&lt;p&gt;If this is not you, please contact system administrators.&lt;/p&gt;\n`;
+    message += `&lt;p&gt;Kind Regards,&lt;/p&gt;\n`;
+    message += `&lt;p&gt;${this.applicationName} Team&lt;/p&gt;\n`;
+    message += `&lt;p&gt;&lt;/p&gt;\n`;
+    message += `&lt;p&gt;WARNING: This is an automaticly generated email. Do not reploy to it.&lt;/p&gt;\n`;
+
+    return this.emailSender.send(to, this.fromAddress, subject, message);
+  }
+}
+
+module.exports = EmailAuth;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

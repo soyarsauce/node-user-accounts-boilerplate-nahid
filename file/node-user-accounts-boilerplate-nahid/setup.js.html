@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">node-user-accounts-boilerplate-nahid/setup.js | node-user-accounts-boilerplate</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Off the shelf user accounts management"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="node-user-accounts-boilerplate"><meta property="twitter:description" content="Off the shelf user accounts management"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setup">setup</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#auth">auth</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/Auth.js~Auth.html">Auth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/EmailAuth.js~EmailAuth.html">EmailAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/FacebookAuth.js~FacebookAuth.html">FacebookAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/GithubAuth.js~GithubAuth.html">GithubAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/GoogleAuth.js~GoogleAuth.html">GoogleAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/LinkedinAuth.js~LinkedinAuth.html">LinkedinAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/auth/NoAuth.js~NoAuth.html">NoAuth</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#crypt">crypt</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/Crypt.js~Crypt.html">Crypt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/PBKDF2.js~PBKDF2.html">PBKDF2</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/crypt/SCRYPT.js~SCRYPT.html">SCRYPT</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#email">email</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/EmailFilter.js~EmailFilter.html">EmailFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/EmailSender.js~EmailSender.html">EmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/NoEmailSender.js~NodeEmailSender.html">NodeEmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/NodeEmailSender.js~NodeEmailSender.html">NodeEmailSender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/email/SESEmailSender.js~SESEmailSender.html">SESEmailSender</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#fields">fields</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-assign">assign</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-checkStrongPassword">checkStrongPassword</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generate">generate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-enabled">enabled</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-mask">mask</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-order">order</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-self">self</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-type">type</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#filters">filters</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-parse">parse</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helper">helper</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-LOGGEDIN">LOGGEDIN</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-audit">audit</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-bootstrap">bootstrap</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-callback">callback</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-defer">defer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-error">error</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-generateId">generateId</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reject">reject</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-resolve">resolve</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-success">success</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#restriction">restriction</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-failure">failure</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-recaptcha">recaptcha</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#session">session</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/session/CollectionSessionStore.js~CollectionSessionStore.html">CollectionSessionStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/node-user-accounts-boilerplate-nahid/session/MemorySessionStore.js~MemorySessionStore.html">MemorySessionStore</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Store">Store</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">node-user-accounts-boilerplate-nahid/setup.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
+
+const audit = require(&apos;./helper/audit&apos;);
+const access = require(&apos;./helper/access&apos;);
+const bootstrap = require(&apos;./helper/bootstrap&apos;);
+const cookieParser = require(&apos;cookie-parser&apos;);
+const expressSession = require(&apos;express-session&apos;);
+const json = require(&apos;body-parser&apos;)
+  .json();
+const parseFilters = require(&apos;./filters/parse&apos;);
+const passport = require(&apos;passport&apos;);
+
+const CollectionSessionStore = require(&apos;./session/CollectionSessionStore&apos;);
+const MemorySessionStore = require(&apos;./session/MemorySessionStore&apos;);
+
+const passwordField = require(&apos;./fields/password&apos;);
+const defaultFields = require(&apos;./fields/defaultFields&apos;);
+
+/**
+ * Library entry point
+ *
+ * @param {Express} app result of express()
+ * @param {Config} config configuration
+ */
+function setup(app, config)
+{
+  // PASSPORT BOILERPLATE
+  app.use(bootstrap(app, config));
+  app.use(cookieParser());
+  app.use(expressSession({
+    secret: Math.round(Date.now() / 1000 / 3600 / 24)
+      .toString(16),
+    resave: true,
+    saveUninitialized: false,
+    store: config.sessions ? new CollectionSessionStore(config.sessions, config) : new MemorySessionStore(config),
+  }));
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+  config.users = config.users || config.collection;
+
+  // User serialisation
+  passport.serializeUser(function (user, done)
+  {
+    done(null, user.id || &apos;none&apos;);
+  });
+  passport.deserializeUser(function (user, done)
+  {
+    done(null, config.users.lookup[user] || {});
+  });
+
+  // API endpoint
+  config.prefix = config.prefix || &apos;/api/accounts&apos;;
+  config.fields = config.fields || {};
+  for (let field in defaultFields)
+  {
+    if (!config.fields[field])
+    {
+      config.fields[field] = defaultFields[field];
+    }
+  }
+
+  // setup APIs
+  setupAuthAPI(app, config);
+  setupAccountsAPI(app, config);
+}
+
+function setupAuthAPI(app, config)
+{
+  const prefix = config.prefix;
+
+  // login/registration
+  const methods = [];
+
+  for (let auth of config.auth || [])
+  {
+    methods.push(auth.description);
+    auth.install(app, `${prefix}/${auth.method}`, passport);
+    if (auth.description.usesPassword &amp;&amp; !config.fields.password)
+    {
+      config.fields.password = passwordField;
+    }
+  }
+  app.get(`${prefix}/methods.json`, (req, res) =&gt;
+  {
+    res.json(methods);
+  });
+
+  const fields = summariseFields(config.fields);
+  app.get(`${prefix}/fields.json`, (req, res) =&gt;
+  {
+    res.json(fields);
+  });
+
+  // self read
+  app.get(`${prefix}/current.json`, (req, res) =&gt;
+  {
+    if (req.user &amp;&amp; req.user.id)
+    {
+      res.json(summariseUserRecord(req.user, config.fields));
+    }
+    else
+    {
+      res.json(false);
+    }
+  });
+
+  // self update
+  app.put(`${prefix}/current.json`, access.LOGGEDIN, json, async (req, res) =&gt;
+  {
+    let user = req.user;
+    if (req.body)
+    {
+      try
+      {
+        await updateUserRecord(user, req.body || {}, user, config);
+        res.resolve(config.users.updateRecord(user), &apos;Done&apos;, audit.ACCOUNT_CHANGE);
+      }
+      catch (e)
+      {
+        res.error(e.message, `${audit.ACCOUNT_CHANGE}_FAILURE`)
+      }
+    }
+  });
+
+  // logout
+  app.all(`${prefix}/logout.json`, (req, res) =&gt;
+  {
+    res.success(&apos;Logged out&apos;, audit.LOGOUT);
+    req.logout();
+    req.session.destroy();
+  });
+}
+
+function setupAccountsAPI(app, config)
+{
+  // ACCOUNT MANAGEMENT API
+  const prefix = config.prefix;
+  const collection = config.users;
+
+  // discover
+  const USER_DATA_ACCESS = access.ROLE_ONE_OF(config.administratorRoles || {});
+
+  app.all(`${prefix}/search.json`, USER_DATA_ACCESS, (req, res) =&gt;
+  {
+    let query = parseFilters(collection.searchMeta, req.query);
+    res.resolve(collection.searchRecords(query), false, audit.ACCOUNT_SEARCH, JSON.stringify(query));
+  });
+
+  app.post(`${prefix}/:user.json`, USER_DATA_ACCESS, json, async (req, res) =&gt;
+  {
+    try
+    {
+      let auth = config.auth.filter(auth =&gt; auth.method === req.body.type)[0];
+      let user = auth.findUser(req.body.value);
+      if (user)
+      {
+        throw new Error(&apos;user already exists&apos;);
+      }
+      let profile = await auth.createProfileFromCredential(req.body.value, req.body);
+      user = auth.createUserFromProfile(profile);
+      user = await config.users.createRecord(user);
+      res.success({success: &apos;Created!&apos;, user}, audit.ACCOUNT_CREATE + audit.SUCCESS);
+    }
+    catch (e)
+    {
+      res.audit(audit.ACCOUNT_CREATE + audit.FAILURE, e.message, JSON.stringify(req.body));
+      res.error(&apos;Account creation failed&apos;)
+    }
+  });
+
+  // read
+  app.get(`${prefix}/:user.json`, USER_DATA_ACCESS, (req, res) =&gt;
+  {
+    let query = {};
+    query[collection.primaryKey] = req.params.user;
+
+    collection.readRecord(query)
+      .then((user) =&gt;
+      {
+        res.json(summariseUserRecord(user, config.fields, {credentials: true}));
+        res.audit(audit.ACCOUNT_READ + audit.SUCCESS, JSON.stringify(query));
+      }, res.reject(audit.ACCOUNT_READ + audit.FAILURE), JSON.stringify(query));
+  });
+
+  // update
+  app.put(`${prefix}/:user.json`, USER_DATA_ACCESS, json, (req, res) =&gt;
+  {
+    let query = {};
+
+    query[collection.primaryKey] = req.params.user;
+    collection.readRecord(query)
+      .then(async (record) =&gt;
+      {
+        let params = Object.keys(req.body);
+
+        params = JSON.stringify(Object.assign({
+          params
+        }, query));
+        try
+        {
+          await updateUserRecord(record, req.body, req.user, config);
+          res.resolve(collection.updateRecord(record), &apos;Done&apos;, audit.ACCOUNT_UPDATE, params);
+        }
+        catch (e)
+        {
+          res.error(e.message, audit.ACCOUNT_UPDATE + audit.FAILURE, params);
+        }
+      }, res.reject(audit.ACCOUNT_UPDATE + audit.FAILURE, JSON.stringify(query)));
+  });
+
+  // delete
+  app.delete(`${prefix}/:user.json`, USER_DATA_ACCESS, (req, res) =&gt;
+  {
+    let query = {};
+
+    query[collection.primaryKey] = req.params.user;
+    if (req.params.user !== req.user.id)
+    {
+      res.resolve(collection.deleteRecord(query), &apos;User deleted&apos;, audit.ACCOUNT_DELETE, JSON.stringify(req.params));
+    }
+    else
+    {
+      res.error(&quot;Can&apos;t delete yourself&quot;, audit.ACCOUNT_DELETE + audit.FAILURE);
+    }
+  });
+
+}
+
+function summariseUserRecord(user, fields, addiionalToInclude={})
+{
+  const output = {};
+  for (let field in user)
+  {
+    const meta = fields[field];
+    if (meta)
+    {
+      if (meta.mask)
+      {
+        output[field] = true;
+      }
+      else
+      {
+        output[field] = user[field];
+      }
+    }
+    else if (addiionalToInclude[field])
+    {
+      output[field] = user[field];
+    }
+  }
+  output.roles = user.roles;
+  return output;
+}
+
+async function updateUserRecord(user, update, loginUser, config)
+{
+  for (let field in update)
+  {
+    const meta = config.fields[field];
+    if (meta)
+    {
+      const value = update[field];
+
+      if (meta.self === false &amp;&amp; loginUser.id === user.id)
+      {
+        throw new Error(`Can&apos;t update your own ${field}`);
+      }
+
+      await meta.assign(user, field, value, meta, loginUser, config);
+      continue;
+    }
+    else
+    {
+      throw new Error(`${field} not editable`);
+    }
+  }
+}
+
+function summariseFields(inputFields)
+{
+  let fields = Object.keys(inputFields).map(field =&gt;
+  {
+    return {
+      name: field,
+      order: inputFields[field].order || 10,
+      type: inputFields[field].type || &apos;string&apos;,
+      self: inputFields[field].self !== undefined? inputFields[field].self : true,
+      admin: inputFields[field].admin !== undefined? inputFields[field].admin : true,
+      enabled: inputFields[field].enabled !== undefined? inputFields[field].enabled : true,
+    };
+  });
+  fields.sort(function(a, b)
+  {
+    if (a.order !== b.order)
+    {
+      return a.order - b.order;
+    }
+    else
+    {
+      if (a.name &lt; b.name)
+      {
+        return -1
+      }
+      else
+      {
+        return 1;
+      }
+    }
+  });
+  return fields;
+}
+
+module.exports = setup;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.3)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

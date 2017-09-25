@@ -1,0 +1,56 @@
+[
+  {
+    "name": "EmailSender#sendImplementation",
+    "filePath": "node-user-accounts-boilerplate-nahid/email/EmailSender.js",
+    "lines": [
+      {
+        "lineNumber": 37,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 38,
+        "line": "   * @abstract"
+      },
+      {
+        "lineNumber": 39,
+        "line": "   * "
+      },
+      {
+        "lineNumber": 40,
+        "line": "   * @param {string} to where to send email"
+      },
+      {
+        "lineNumber": 41,
+        "line": "   * @param {string} from reply address"
+      },
+      {
+        "lineNumber": 42,
+        "line": "   * @param {string} subject subject of email"
+      },
+      {
+        "lineNumber": 43,
+        "line": "   * @param {string} body content of email"
+      },
+      {
+        "lineNumber": 44,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 45,
+        "line": "  async sendImplementation(to_, from_, subject_, body_)"
+      }
+    ],
+    "codeParams": [
+      "to_",
+      "from_",
+      "subject_",
+      "body_"
+    ],
+    "docParams": [
+      "to",
+      "from",
+      "subject",
+      "body"
+    ]
+  }
+]

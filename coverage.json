@@ -1,0 +1,304 @@
+{
+  "coverage": "54.9%",
+  "expectCount": 204,
+  "actualCount": 112,
+  "files": {
+    "node-user-accounts-boilerplate-nahid/auth/Auth.js": {
+      "expectCount": 16,
+      "actualCount": 14,
+      "undocumentLines": [
+        3,
+        4
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/auth/EmailAuth.js": {
+      "expectCount": 24,
+      "actualCount": 17,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        11
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/auth/FacebookAuth.js": {
+      "expectCount": 7,
+      "actualCount": 5,
+      "undocumentLines": [
+        4,
+        5
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/auth/GithubAuth.js": {
+      "expectCount": 7,
+      "actualCount": 5,
+      "undocumentLines": [
+        4,
+        5
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/auth/GoogleAuth.js": {
+      "expectCount": 7,
+      "actualCount": 5,
+      "undocumentLines": [
+        4,
+        5
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/auth/LinkedinAuth.js": {
+      "expectCount": 7,
+      "actualCount": 5,
+      "undocumentLines": [
+        3,
+        4
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/auth/NoAuth.js": {
+      "expectCount": 6,
+      "actualCount": 4,
+      "undocumentLines": [
+        3,
+        4
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/crypt/Crypt.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/crypt/PBKDF2.js": {
+      "expectCount": 10,
+      "actualCount": 4,
+      "undocumentLines": [
+        3,
+        4,
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/crypt/SCRYPT.js": {
+      "expectCount": 7,
+      "actualCount": 4,
+      "undocumentLines": [
+        3,
+        4,
+        21
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/email/EmailFilter.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/email/EmailSender.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        8
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/email/NoEmailSender.js": {
+      "expectCount": 3,
+      "actualCount": 1,
+      "undocumentLines": [
+        3,
+        10
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/email/NodeEmailSender.js": {
+      "expectCount": 5,
+      "actualCount": 1,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        16
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/email/SESEmailSender.js": {
+      "expectCount": 7,
+      "actualCount": 1,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        14,
+        20,
+        25
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/fields/default.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        3,
+        4
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/fields/disabled.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        3,
+        4,
+        8
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/fields/password.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/fields/roles.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/fields/strongPassword.js": {
+      "expectCount": 6,
+      "actualCount": 1,
+      "undocumentLines": [
+        3,
+        7,
+        16,
+        24,
+        77
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/filters/parse.js": {
+      "expectCount": 3,
+      "actualCount": 1,
+      "undocumentLines": [
+        4,
+        47
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/helper/access.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/helper/audit.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/helper/bootstrap.js": {
+      "expectCount": 7,
+      "actualCount": 1,
+      "undocumentLines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/helper/callback.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/helper/defer.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/helper/error.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/helper/generateId.js": {
+      "expectCount": 2,
+      "actualCount": 1,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/helper/reject.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/helper/resolve.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/helper/success.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/restriction/failure.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/restriction/recaptcha.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "node-user-accounts-boilerplate-nahid/session/CollectionSessionStore.js": {
+      "expectCount": 10,
+      "actualCount": 8,
+      "undocumentLines": [
+        3,
+        4
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/session/MemorySessionStore.js": {
+      "expectCount": 10,
+      "actualCount": 8,
+      "undocumentLines": [
+        3,
+        4
+      ]
+    },
+    "node-user-accounts-boilerplate-nahid/setup.js": {
+      "expectCount": 18,
+      "actualCount": 1,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        14,
+        16,
+        17,
+        68,
+        135,
+        230,
+        256,
+        280
+      ]
+    }
+  }
+}
